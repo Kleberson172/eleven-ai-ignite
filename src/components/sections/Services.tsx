@@ -23,9 +23,7 @@ const services: Service[] = [
     desc: 'Chatbots contextuais com NLP e GPT-4 que entendem linguagem natural e resolvem solicitações complexas sem intervenção humana. Disponível 24/7.',
     audience: ['Alto volume de atendimento ao cliente', 'Call centers que automatizam respostas', 'E-commerce e retalho com suporte contínuo', 'Bancos, seguradoras e financeiras', 'Hospitais e clínicas com agendamento'],
     from: -80,
-  },
-  {
-    Icon: Mic,
+    visual: 'chat',
     title: 'Reconhecimento de Voz',
     color: '#7B61FF',
     desc: 'Transcrição em tempo real com 98% de precisão, suporte a múltiplos sotaques e latência de 120ms. Tecnologia: OpenAI Whisper.',
