@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import { MessageSquare, Mic, BarChart3, Sparkles } from 'lucide-react';
+import { ChatVisual, VoiceVisual, ChartVisual, ImageGenVisual } from '../ServiceVisuals';
+
+type VisualKind = 'chat' | 'voice' | 'chart' | 'image';
 
 type Service = {
   Icon: React.ComponentType<{ className?: string }>;
@@ -9,6 +12,7 @@ type Service = {
   desc: string;
   audience: string[];
   from: number;
+  visual: VisualKind;
 };
 
 const services: Service[] = [
@@ -19,6 +23,7 @@ const services: Service[] = [
     desc: 'Chatbots contextuais com NLP e GPT-4 que entendem linguagem natural e resolvem solicitações complexas sem intervenção humana. Disponível 24/7.',
     audience: ['Alto volume de atendimento ao cliente', 'Call centers que automatizam respostas', 'E-commerce e retalho com suporte contínuo', 'Bancos, seguradoras e financeiras', 'Hospitais e clínicas com agendamento'],
     from: -80,
+    visual: 'chat',
   },
   {
     Icon: Mic,
@@ -27,6 +32,7 @@ const services: Service[] = [
     desc: 'Transcrição em tempo real com 98% de precisão, suporte a múltiplos sotaques e latência de 120ms. Tecnologia: OpenAI Whisper.',
     audience: ['Meios de comunicação e jornalismo', 'Tribunais e serviços jurídicos', 'Hospitais e clínicas (ditado médico)', 'Empresas com reuniões frequentes', 'Call centers para análise de qualidade'],
     from: 80,
+    visual: 'voice',
   },
   {
     Icon: BarChart3,
@@ -35,6 +41,7 @@ const services: Service[] = [
     desc: 'Dashboards preditivos que transformam dados brutos em insights acionáveis com visualizações interativas geradas em segundos.',
     audience: ['Gestores que precisam de relatórios em tempo real', 'Empresas de retalho com análise de vendas', 'Bancos e instituições financeiras', 'Organismos governamentais', 'Startups com foco em métricas'],
     from: -80,
+    visual: 'chart',
   },
   {
     Icon: Sparkles,
@@ -43,6 +50,7 @@ const services: Service[] = [
     desc: 'Criação de visuais profissionais com IA generativa — logos, ilustrações e mockups a partir de texto em segundos. Tecnologia: Flux AI.',
     audience: ['Agências de marketing e publicidade', 'E-commerce com imagens de produto', 'Startups sem budget para design', 'Criadores de conteúdo e influencers', 'Empresas de branding rápido'],
     from: 80,
+    visual: 'image',
   },
 ];
 
@@ -78,14 +86,20 @@ function Card({ s, idx }: { s: Service; idx: number }) {
           className="absolute -inset-px rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
           style={{ boxShadow: `0 0 60px ${s.color}66, inset 0 0 30px ${s.color}22`, border: `1px solid ${s.color}` }}
         />
-        <motion.div
-          animate={{ y: [0, -10, 0] }}
-          transition={{ duration: 4, repeat: Infinity, delay: idx * 0.3 }}
-          className="inline-flex w-16 h-16 items-center justify-center rounded-2xl mb-5"
-          style={{ background: `${s.color}22`, color: s.color, boxShadow: `0 0 30px ${s.color}55` }}
-        >
-          <s.Icon className="w-8 h-8" />
-        </motion.div>
+        <div className="flex items-start gap-4 mb-2">
+          <motion.div
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 4, repeat: Infinity, delay: idx * 0.3 }}
+            className="inline-flex w-16 h-16 items-center justify-center rounded-2xl shrink-0"
+            style={{ background: `${s.color}22`, color: s.color, boxShadow: `0 0 30px ${s.color}55` }}
+          >
+            <s.Icon className="w-8 h-8" />
+          </motion.div>
+        </div>
+        {s.visual === 'chat' && <ChatVisual color={s.color} />}
+        {s.visual === 'voice' && <VoiceVisual color={s.color} />}
+        {s.visual === 'chart' && <ChartVisual color={s.color} />}
+        {s.visual === 'image' && <ImageGenVisual color={s.color} />}
         <h3 className="text-2xl font-bold mb-3" style={{ color: s.color }}>{s.title}</h3>
         <p className="text-muted-foreground mb-5">{s.desc}</p>
         <div className="border-t border-border pt-4">
