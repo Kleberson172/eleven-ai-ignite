@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import { MessageSquare, Mic, BarChart3, Sparkles } from 'lucide-react';
+import { ChatVisual, VoiceVisual, ChartVisual, ImageGenVisual } from '../ServiceVisuals';
+
+type VisualKind = 'chat' | 'voice' | 'chart' | 'image';
 
 type Service = {
   Icon: React.ComponentType<{ className?: string }>;
