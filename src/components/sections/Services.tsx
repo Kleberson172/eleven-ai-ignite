@@ -24,11 +24,15 @@ const services: Service[] = [
     audience: ['Alto volume de atendimento ao cliente', 'Call centers que automatizam respostas', 'E-commerce e retalho com suporte contínuo', 'Bancos, seguradoras e financeiras', 'Hospitais e clínicas com agendamento'],
     from: -80,
     visual: 'chat',
+  },
+  {
+    Icon: Mic,
     title: 'Reconhecimento de Voz',
     color: '#7B61FF',
     desc: 'Transcrição em tempo real com 98% de precisão, suporte a múltiplos sotaques e latência de 120ms. Tecnologia: OpenAI Whisper.',
     audience: ['Meios de comunicação e jornalismo', 'Tribunais e serviços jurídicos', 'Hospitais e clínicas (ditado médico)', 'Empresas com reuniões frequentes', 'Call centers para análise de qualidade'],
     from: 80,
+    visual: 'voice',
   },
   {
     Icon: BarChart3,
@@ -37,6 +41,7 @@ const services: Service[] = [
     desc: 'Dashboards preditivos que transformam dados brutos em insights acionáveis com visualizações interativas geradas em segundos.',
     audience: ['Gestores que precisam de relatórios em tempo real', 'Empresas de retalho com análise de vendas', 'Bancos e instituições financeiras', 'Organismos governamentais', 'Startups com foco em métricas'],
     from: -80,
+    visual: 'chart',
   },
   {
     Icon: Sparkles,
@@ -45,6 +50,7 @@ const services: Service[] = [
     desc: 'Criação de visuais profissionais com IA generativa — logos, ilustrações e mockups a partir de texto em segundos. Tecnologia: Flux AI.',
     audience: ['Agências de marketing e publicidade', 'E-commerce com imagens de produto', 'Startups sem budget para design', 'Criadores de conteúdo e influencers', 'Empresas de branding rápido'],
     from: 80,
+    visual: 'image',
   },
 ];
 
