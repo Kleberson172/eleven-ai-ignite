@@ -12,6 +12,7 @@ type Service = {
   desc: string;
   audience: string[];
   from: number;
+  visual: VisualKind;
 };
 
 const services: Service[] = [
