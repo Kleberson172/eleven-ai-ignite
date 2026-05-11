@@ -1,26 +1,51 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from '@tanstack/react-router';
+import { Loader } from '../components/Loader';
+import { CursorTrail } from '../components/CursorTrail';
+import { Navbar } from '../components/Navbar';
+import { Hero } from '../components/sections/Hero';
+import { About } from '../components/sections/About';
+import { Routes as RoutesSection } from '../components/sections/Routes';
+import { Services } from '../components/sections/Services';
+import { Platform } from '../components/sections/Platform';
+import { Pricing } from '../components/sections/Pricing';
+import { SWOT } from '../components/sections/SWOT';
+import { Contact } from '../components/sections/Contact';
+import { Footer } from '../components/sections/Footer';
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute('/')({
+  head: () => ({
+    meta: [
+      { title: 'ELEVEN — Inteligência que transforma decisões' },
+      { name: 'description', content: 'A plataforma de IA mais confiável de Angola. Otimizador de rotas, atendimento inteligente, voz, dados e geração de imagens.' },
+      { property: 'og:title', content: 'ELEVEN — Inteligência que transforma decisões' },
+      { property: 'og:description', content: 'A plataforma de IA mais confiável de Angola.' },
+    ],
+    links: [
+      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: '' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap' },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="relative">
+      <Loader />
+      <CursorTrail />
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <RoutesSection />
+        <Services />
+        <Platform />
+        <Pricing />
+        <SWOT />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }
