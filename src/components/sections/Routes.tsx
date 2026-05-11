@@ -3,7 +3,7 @@ import { TrendingDown, DollarSign, RefreshCw, Clock } from 'lucide-react';
 import { RoutesScene } from '../three/RoutesScene';
 
 const benefits = [
-  { Icon: TrendingDown, title: 'Redução de até 40% nos custos logísticos' },
+  { Icon: TrendingDown, title: 'Redução de até 22% nos custos logísticos' },
   { Icon: DollarSign, title: 'Economia média de 32.400.000 Kz/ano por cliente' },
   { Icon: RefreshCw, title: 'Recálculo dinâmico em tempo real' },
   { Icon: Clock, title: 'Disponibilidade 24/7 sem interrupção' },
