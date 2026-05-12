@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { TrendingDown, DollarSign, RefreshCw, Clock } from 'lucide-react';
-import { RoutesScene } from '../three/RoutesScene';
+import { AngolaRealMap } from '../three/AngolaMiniMap';
 
 const benefits = [
   { Icon: TrendingDown, title: 'Redução de até 22% nos custos logísticos' },
@@ -78,7 +78,7 @@ export function Routes() {
             <span className="w-2 h-2 rounded-full bg-[#00FF88] animate-pulse" />
             <span className="text-xs uppercase tracking-widest text-foreground">Mapa de Angola — Rota ao Vivo</span>
           </div>
-          <RoutesScene />
+          <AngolaRealMap />
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
