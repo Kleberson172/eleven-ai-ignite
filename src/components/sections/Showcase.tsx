@@ -1,5 +1,6 @@
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { useRef } from 'react';
+import { AngolaMiniMap } from '../three/AngolaMiniMap';
 
 const pillars = [
   {
@@ -109,6 +110,11 @@ export function Showcase() {
   return (
     <section className="relative py-32 px-6 overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-20" />
+      {/* 3D Angola map background */}
+      <div className="absolute inset-0 opacity-40 pointer-events-none">
+        <AngolaMiniMap />
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background/80 pointer-events-none" />
       {/* ambient blobs */}
       <motion.div
         className="absolute top-1/4 left-0 w-96 h-96 rounded-full blur-[120px] opacity-30"
