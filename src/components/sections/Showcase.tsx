@@ -111,7 +111,7 @@ export function Showcase() {
     <section className="relative py-32 px-6 overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-20" />
       {/* 3D Angola map background */}
-      <div className="absolute inset-0 opacity-40 pointer-events-none">
+      <div className="absolute inset-0 opacity-60 pointer-events-none">
         <AngolaMiniMap />
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background/80 pointer-events-none" />
