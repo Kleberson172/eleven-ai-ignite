@@ -8,7 +8,7 @@ import { Routes as RoutesSection } from '../components/sections/Routes';
 import { Services } from '../components/sections/Services';
 import { Platform } from '../components/sections/Platform';
 import { Pricing } from '../components/sections/Pricing';
-import { SWOT } from '../components/sections/SWOT';
+import { Showcase } from '../components/sections/Showcase';
 import { Contact } from '../components/sections/Contact';
 import { Footer } from '../components/sections/Footer';
 
@@ -42,7 +42,7 @@ function Index() {
         <Services />
         <Platform />
         <Pricing />
-        <SWOT />
+        <Showcase />
         <Contact />
       </main>
       <Footer />
